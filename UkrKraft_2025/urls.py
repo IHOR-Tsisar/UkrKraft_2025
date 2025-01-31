@@ -16,6 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 
+from django.conf import settings
+DEBUG = settings.DEBUG
+
 from django.urls import include, path
 
 urlpatterns = [
@@ -23,4 +26,10 @@ urlpatterns = [
         path('', include('main.urls', namespace='main')),
         path('catalog/', include('goods.urls', namespace='catalog')),
 
+
 ]
+
+if settings.DEBUG:
+    import debug_toolbar
+
+    urlpatterns += [path('__debug__/', include(debug_toolbar.urls))]
