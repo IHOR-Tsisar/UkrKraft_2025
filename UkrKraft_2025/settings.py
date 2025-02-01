@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.admin',
 
-    "debug_toolbar",
+    'debug_toolbar',
 
     'goods.apps.GoodsConfig',
     'main.apps.MainConfig',

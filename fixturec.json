@@ -1,0 +1,6 @@
+[
+{
+  "model": "goods.categories",
+  "pk": 2,
+  "fields": {
+    "name": 
