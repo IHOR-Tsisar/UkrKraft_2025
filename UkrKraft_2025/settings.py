@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'debug_toolbar',
 
+
     'goods.apps.GoodsConfig',
     'main.apps.MainConfig',
 

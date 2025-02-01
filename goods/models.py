@@ -14,6 +14,7 @@ class Categories(models.Model):
         return self.name
 
 class Products(models.Model):
+
     name = models.CharField(max_length=255, verbose_name="Названиe")
     slag = models.SlugField(max_length=255, unique=True, blank=True, null=True, verbose_name="URL")
     category = models.ForeignKey(to=Categories, on_delete=models.CASCADE, verbose_name="Категория")
