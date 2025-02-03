@@ -1,5 +1,8 @@
 from django.db import models
 
+
+
+
 class Categories(models.Model):
     name = models.CharField(max_length=255,unique=True, verbose_name="Названиe")
     slag = models.SlugField(max_length=255, unique=True, blank=True, null=True, verbose_name="URL")
@@ -32,3 +35,14 @@ class Products(models.Model):
 
     def __str__(self):
         return f'{self.name} Количество: {self.quantity}'
+
+    def display_id(self)-> str:
+        return f'{self.id:03}'
+
+    def sell_pryce(self):
+        if self.discount:
+            return round(self.price-self.price*self.discount/100,2)
+        return self.price
+
+
+
