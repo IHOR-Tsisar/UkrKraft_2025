@@ -4,8 +4,6 @@ from django.template import loader
 from goods.models import Categories
 
 def index(request):
-
-
     context= {
         'title': 'Kraft - головна',
         'content':'Магазин крафтових сирів і напоїв',

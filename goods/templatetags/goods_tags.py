@@ -1,4 +1,4 @@
-from multiprocessing.resource_tracker import register
+
 
 from goods.models import Categories
 from django import template

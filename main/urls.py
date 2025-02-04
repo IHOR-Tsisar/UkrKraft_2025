@@ -1,4 +1,4 @@
-UkrKraft_2025_name='main'
+# UkrKraft_2025_name='main'
 from django.urls import path
 from django.contrib import admin
 from main import views
