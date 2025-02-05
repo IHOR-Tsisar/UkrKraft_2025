@@ -5,7 +5,7 @@ from django.db import models
 
 class Categories(models.Model):
     name = models.CharField(max_length=255,unique=True, verbose_name="Названиe")
-    slag = models.SlugField(max_length=255, unique=True, blank=True, null=True, verbose_name="URL")
+    slug = models.SlugField(max_length=255, unique=True, blank=True, null=True, verbose_name="URL")
     isvisible = models.BooleanField(default=True)
 
     class Meta:
@@ -19,7 +19,7 @@ class Categories(models.Model):
 class Products(models.Model):
 
     name = models.CharField(max_length=255, verbose_name="Названиe")
-    slag = models.SlugField(max_length=255, unique=True, blank=True, null=True, verbose_name="URL")
+    slug = models.SlugField(max_length=255, unique=True, blank=True, null=True, verbose_name="URL")
     category = models.ForeignKey(to=Categories, on_delete=models.CASCADE, verbose_name="Категория")
     price = models.DecimalField(default=0.00, max_digits=6, decimal_places=2, verbose_name="Цена")
     description = models.TextField(blank=True, null=True, verbose_name="Описание")

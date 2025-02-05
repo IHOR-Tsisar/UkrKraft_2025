@@ -7,14 +7,14 @@ from .models import Categories, Products
 
 @admin.register(Categories)
 class CategoriesAdmin(admin.ModelAdmin):
-    prepopulated_fields ={'slag':('name',)}
-    list_display = ['name', 'slag', 'isvisible']
+    prepopulated_fields ={'slug':('name',)}
+    list_display = ['name', 'slug', 'isvisible']
     list_filter = ['isvisible']
-    search_fields = ['name', 'slag']
+    search_fields = ['name', 'slug']
 
 @admin.register(Products)
 class ProductsAdmin(admin.ModelAdmin):
-    prepopulated_fields ={'slag':('name',)}
+    prepopulated_fields ={'slug':('name',)}
     list_display = ['name', 'category', 'price', 'quantity', 'isvisible']
     list_filter = ['category', 'isvisible']
-    search_fields = ['name', 'slag', 'category__name']
+    search_fields = ['name', 'slug', 'category__name']
